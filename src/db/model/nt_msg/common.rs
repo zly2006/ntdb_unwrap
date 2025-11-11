@@ -7,7 +7,7 @@ use snafu::ResultExt;
 use std::fmt;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, From, Into, Serialize, Deserialize)]
-pub struct ChatType(i64);
+pub struct ChatType(pub i64);
 impl fmt::Display for ChatType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
@@ -32,7 +32,7 @@ impl FromSql for ChatType {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, From, Into, Serialize, Deserialize)]
-pub struct MessageType(i64);
+pub struct MessageType(pub i64);
 impl fmt::Display for MessageType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
@@ -62,7 +62,7 @@ impl FromSql for MessageType {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, From, Into, Serialize, Deserialize)]
-pub struct SubMessageType(i64);
+pub struct SubMessageType(pub i64);
 impl fmt::Display for SubMessageType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
@@ -96,7 +96,7 @@ impl FromSql for SubMessageType {
     }
 }
 #[derive(Debug, Clone, Copy, PartialEq, Eq, From, Into, Serialize, Deserialize)]
-pub struct SendStatus(i64);
+pub struct SendStatus(pub i64);
 impl fmt::Display for SendStatus {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(
@@ -119,7 +119,7 @@ impl FromSql for SendStatus {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, From, Into, Serialize, Deserialize)]
-pub struct AtFlag(i64);
+pub struct AtFlag(pub i64);
 impl AtFlag {
     pub const SOMEONE_AT_ME: i64 = 6;
     pub const SOMEONE_AT_OTHERS: i64 = 2;
