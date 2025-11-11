@@ -3,3 +3,5 @@ mod common;
 pub use common::*;
 mod group_msg_table;
 pub use group_msg_table::*;
+mod c2c_msg_table;
+pub use c2c_msg_table::*;
